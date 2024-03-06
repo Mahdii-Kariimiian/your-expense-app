@@ -1,0 +1,215 @@
+/*                      */
+/*        Reset         */
+/*                      */
+
+/* Box sizing */
+
+*,
+*::after,
+*:before {
+	box-sizing: border-box;
+}
+
+/* Reset margins */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+	margin: 0;
+}
+
+/* Set up the body */
+
+body {
+	line-height: 1.5;
+}
+
+/* make images easier to work with */
+
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* make form elements easier to work with  */
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* remove animation for people who've turned them off */
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01 !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01 !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* container */
+
+.container {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+		'Lucida Sans', Arial, sans-serif;
+	font-size: 14px;
+
+	max-width: 500px;
+	min-height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	gap: 2em;
+
+	padding: 2em 1em 1em;
+	margin: 0 auto;
+	background: rgba(38, 36, 160, 0.826);
+	background: linear-gradient(
+		180deg,
+		rgba(38, 36, 160, 0.826) 0%,
+		rgba(255, 255, 255, 1) 20%
+	);
+}
+
+/* header section */
+
+.title {
+	font-size: 2em;
+}
+
+/* balance section */
+
+.balance {
+	font-size: 1.1em;
+	line-height: 2.5em;
+}
+
+.income-expence {
+	display: flex;
+	justify-content: space-around;
+}
+
+.income-expence {
+	position: relative;
+	background-color: rgba(38, 36, 160, 0.826);
+	color: white;
+	margin: 1em auto 0;
+	text-align: center;
+}
+
+.income-expence::after {
+	content: '';
+	position: absolute;
+	background-color: black;
+	top: 17px;
+	width: 3px;
+	height: 60px;
+}
+
+.income,
+.expence {
+	font-size: 1.2em;
+	line-height: 2em;
+	padding: 0.5em;
+}
+
+/* history section */
+
+.history-detail {
+	position: relative;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	background-color: rgba(38, 36, 160, 0.826);
+	color: white;
+
+	margin-top: 0.5em;
+	padding: 0.5em 1em;
+}
+
+.history-detail-color {
+	position: absolute;
+	background-color: green;
+	right: 0;
+	width: 10px;
+	height: 100%;
+}
+
+.date {
+	font-size: 0.7em;
+	font-weight: 600;
+	align-self: flex-end;
+	color: rgb(255, 255, 255);
+	margin-left: 0.5em;
+	margin-right: auto;
+}
+
+/* transaction section */
+
+.transaction-title {
+	margin-bottom: 0.1em;
+}
+
+.add-transaction {
+	display: flex;
+	flex-direction: column;
+}
+
+.transaction-text,
+.transaction-money {
+	padding: 0.5em;
+	margin-bottom: 1em;
+}
+
+.add-transaction > label {
+	font-weight: 700;
+}
+
+.transaction-submit {
+	font-weight: 700;
+	font-size: 1.2em;
+
+	background-color: rgba(38, 36, 160, 0.826);
+	color: white;
+
+	padding: 0.5em;
+	margin-block: 1em;
+
+	border: none;
+}
+
+.transaction-submit:hover {
+	background-color: rgb(38, 36, 160);
+	cursor: pointer;
+}
+
+.button {
+	color: white;
+	background-color: rgba(165, 42, 42, 0.826);
+
+	margin-left: 1.2em;
+	margin-right: 0.6em;
+	padding-inline: 0.45em;
+	border: none;
+}
+
+.button:hover {
+	background-color: rgb(165, 42, 42);
+	cursor: pointer;
+}
