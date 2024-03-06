@@ -45,7 +45,7 @@ function createElement(text, money) {
 		dateElement.innerText = historyDate;
 		const p = document.createElement('p');
 		p.classList.add('history-detail-money');
-		p.innerText = `${money} $`;
+		p.innerText = `${money} €`;
 		const button = document.createElement('button');
 		button.classList.add('button');
 		button.innerText = 'X';
@@ -97,7 +97,7 @@ function renderLocalStorage() {
 			dateElement.innerText = item.date;
 			const p = document.createElement('p');
 			p.classList.add('history-detail-money');
-			p.innerText = `${item.money} $`;
+			p.innerText = `${item.money} €`;
 			const colorDiv = document.createElement('div');
 			const button = document.createElement('button');
 			button.classList.add('button');
