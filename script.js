@@ -71,7 +71,6 @@ function createElement(text, money) {
 		// save transactions to local storage
 		localStorage.setItem('history', JSON.stringify(historyArray));
 		// recalculating the numbers
-		Balance();
 		// clear input values
 		transactionMoney.value = '';
 		transactionText.value = '';
@@ -81,6 +80,7 @@ function createElement(text, money) {
 		transactionText.style.border = '1px solid red';
 		transactionMoney.style.border = '1px solid red';
 	}
+	Balance();
 }
 
 //render local storage on page load
@@ -142,7 +142,7 @@ function Balance() {
 	} else {
 		total = 0;
 	}
-	balanceMoney.innerText = `${total} $`;
+	balanceMoney.innerText = `${total} €`;
 
 	// income
 	if (storedHistory) {
@@ -154,7 +154,7 @@ function Balance() {
 			return acc + Number(income.money);
 		}, 0);
 	}
-	incomeMoney.innerText = `${income} $`;
+	incomeMoney.innerText = `${income} €`;
 
 	//expence
 	if (storedHistory) {
@@ -166,7 +166,7 @@ function Balance() {
 			return acc + Number(expence.money);
 		}, 0);
 	}
-	expenceMoney.innerText = `${expence} $`;
+	expenceMoney.innerText = `${expence} €`;
 }
 
 //Events

@@ -94,7 +94,7 @@ select {
 /* balance section */
 
 .balance {
-	font-size: 1.1em;
+	font-size: 1.2em;
 	line-height: 2.5em;
 }
 
@@ -130,6 +130,8 @@ select {
 /* history section */
 
 .history-detail {
+	font-size: 1.4em;
+
 	position: relative;
 
 	display: flex;
@@ -152,9 +154,9 @@ select {
 }
 
 .date {
-	font-size: 0.7em;
+	font-size: 0.8em;
 	font-weight: 600;
-	align-self: flex-end;
+
 	color: rgb(255, 255, 255);
 	margin-left: 0.5em;
 	margin-right: auto;
@@ -163,6 +165,7 @@ select {
 /* transaction section */
 
 .transaction-title {
+	font-size: 1.5em;
 	margin-bottom: 0.1em;
 }
 
@@ -173,12 +176,14 @@ select {
 
 .transaction-text,
 .transaction-money {
+	font-size: 1.2em;
 	padding: 0.5em;
 	margin-bottom: 1em;
 }
 
 .add-transaction > label {
 	font-weight: 700;
+	font-size: 1.2em;
 }
 
 .transaction-submit {
