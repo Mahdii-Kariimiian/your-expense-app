@@ -61,6 +61,18 @@ select {
 	}
 }
 
+:root {
+	--text-color: #2b1204;
+	--bg-color: #fdf6f2;
+	--accent-color: #eae248;
+	--primary-color: #e66428;
+	--secondary-color: #f0d97f;
+}
+
+body {
+	background: var(--bg-color);
+}
+
 /* container */
 
 .container {
@@ -77,25 +89,30 @@ select {
 
 	padding: 2em 1em 1em;
 	margin: 0 auto;
-	background: rgba(38, 36, 160, 0.826);
-	background: linear-gradient(
-		180deg,
-		rgba(38, 36, 160, 0.826) 0%,
-		rgba(255, 255, 255, 1) 20%
-	);
+	color: var(--text-color);
+	background: var(--bg-color);
 }
 
 /* header section */
 
+.header {
+	border-bottom: 2px solid var(--text-color);
+}
+
 .title {
 	font-size: 2em;
+	font-weight: 900;
 }
 
 /* balance section */
 
 .balance {
+	display: flex;
+	gap: 2rem;
+	justify-content: center;
 	font-size: 1.2em;
 	line-height: 2.5em;
+	padding-block: 1rem;
 }
 
 .income-expence {
@@ -105,29 +122,44 @@ select {
 
 .income-expence {
 	position: relative;
-	background-color: rgba(38, 36, 160, 0.826);
-	color: white;
+	background-color: var(--text-color);
+	color: var(--primary-color);
 	margin: 1em auto 0;
 	text-align: center;
 }
 
-.income-expence::after {
+/* .income-expence::after {
 	content: '';
 	position: absolute;
-	background-color: black;
+	background-color: var(--primary-color);
 	top: 17px;
 	width: 3px;
 	height: 60px;
-}
+} */
 
 .income,
 .expence {
+	background-color: var(--accent-color);
+	width: 100%;
 	font-size: 1.2em;
 	line-height: 2em;
-	padding: 0.5em;
+	padding-block: 0.5em;
+	border-inline: 0.2em solid var(--text-color);
+}
+
+.income {
+	border-left: 0.2em solid green;
+}
+
+.expence {
+	border-right: 0.2em solid red;
 }
 
 /* history section */
+
+.history-title {
+	border-bottom: 2px solid var(--text-color);
+}
 
 .history-detail {
 	font-size: 1.4em;
@@ -138,26 +170,27 @@ select {
 	justify-content: space-between;
 	align-items: center;
 
-	background-color: rgba(38, 36, 160, 0.826);
-	color: white;
+	background-color: var(--accent-color);
+	color: var(--text-color);
 
 	margin-top: 0.5em;
 	padding: 0.5em 1em;
+	border-left: 0.2em solid var(--text-color);
 }
 
 .history-detail-color {
 	position: absolute;
 	background-color: green;
 	right: 0;
-	width: 10px;
+	width: 0.2em;
 	height: 100%;
 }
 
 .date {
-	font-size: 0.8em;
+	font-size: 0.75em;
 	font-weight: 600;
 
-	color: rgb(255, 255, 255);
+	color: var(--primary-color);
 	margin-left: 0.5em;
 	margin-right: auto;
 }
@@ -167,6 +200,7 @@ select {
 .transaction-title {
 	font-size: 1.5em;
 	margin-bottom: 0.1em;
+	border-bottom: 2px solid var(--text-color);
 }
 
 .add-transaction {
@@ -179,19 +213,22 @@ select {
 	font-size: 1.2em;
 	padding: 0.5em;
 	margin-bottom: 1em;
+	background-color: var(--bg-color);
+	border: 1px solid var(--text-color);
 }
 
 .add-transaction > label {
 	font-weight: 700;
 	font-size: 1.2em;
+	margin-top: 0.5rem;
 }
 
 .transaction-submit {
 	font-weight: 700;
 	font-size: 1.2em;
 
-	background-color: rgba(38, 36, 160, 0.826);
-	color: white;
+	background-color: var(--accent-color);
+	color: var(--primary-color);
 
 	padding: 0.5em;
 	margin-block: 1em;
@@ -200,13 +237,13 @@ select {
 }
 
 .transaction-submit:hover {
-	background-color: rgb(38, 36, 160);
+	background-color: var(--secondary-color);
 	cursor: pointer;
 }
 
 .button {
-	color: white;
-	background-color: rgba(165, 42, 42, 0.826);
+	color: var(--text-color);
+	background-color: var(--primary-color);
 
 	margin-left: 1.2em;
 	margin-right: 0.6em;
@@ -215,6 +252,7 @@ select {
 }
 
 .button:hover {
-	background-color: rgb(165, 42, 42);
+	background-color: var(--text-color);
+	color: var(--primary-color);
 	cursor: pointer;
 }
