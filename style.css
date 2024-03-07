@@ -63,8 +63,7 @@ select {
 
 :root {
 	--text-color: #2b1204;
-	--bg-color: #fdf6f2;
-	--accent-color: #eae248;
+	--bg-color: rgb(253, 246, 242);
 	--primary-color: #e66428;
 	--secondary-color: #f0d97f;
 }
@@ -139,20 +138,34 @@ body {
 
 .income,
 .expence {
-	background-color: var(--accent-color);
+	font-weight: 600;
+	background-color: var(--bg-color);
 	width: 100%;
-	font-size: 1.2em;
+	font-size: 1.3em;
 	line-height: 2em;
 	padding-block: 0.5em;
-	border-inline: 0.2em solid var(--text-color);
 }
 
 .income {
-	border-left: 0.2em solid green;
+	background: rgb(0, 128, 0);
+	background: linear-gradient(
+		90deg,
+		rgba(0, 128, 0, 1) 0%,
+		rgb(253, 246, 242) 30%,
+		rgb(253, 246, 242) 100%
+	);
+	border-left: 0.2em solid #008000;
 }
 
 .expence {
-	border-right: 0.2em solid red;
+	background: rgb(255, 0, 0);
+	background: linear-gradient(
+		270deg,
+		rgb(255, 0, 0) 0%,
+		rgb(253, 246, 242) 30%,
+		rgb(253, 246, 242) 100%
+	);
+	border-right: 0.2em solid hsl(0, 100%, 50%);
 }
 
 /* history section */
@@ -161,7 +174,14 @@ body {
 	border-bottom: 2px solid var(--text-color);
 }
 
+.history-detail-title {
+	/* min-width: 200px; */
+	max-width: 210px;
+	word-wrap: break-word;
+}
+
 .history-detail {
+	min-width: 440px;
 	font-size: 1.4em;
 
 	position: relative;
@@ -170,20 +190,15 @@ body {
 	justify-content: space-between;
 	align-items: center;
 
-	background-color: var(--accent-color);
 	color: var(--text-color);
 
 	margin-top: 0.5em;
 	padding: 0.5em 1em;
-	border-left: 0.2em solid var(--text-color);
 }
 
-.history-detail-color {
-	position: absolute;
-	background-color: green;
-	right: 0;
-	width: 0.2em;
-	height: 100%;
+.history-detail-money {
+	padding-left: 0.5em;
+	white-space: nowrap;
 }
 
 .date {
@@ -227,8 +242,9 @@ body {
 	font-weight: 700;
 	font-size: 1.2em;
 
-	background-color: var(--accent-color);
-	color: var(--primary-color);
+	outline: 2px solid var(--text-color);
+	background-color: var(--bg-color);
+	color: var(--text-color);
 
 	padding: 0.5em;
 	margin-block: 1em;
@@ -243,8 +259,7 @@ body {
 
 .button {
 	color: var(--text-color);
-	background-color: var(--primary-color);
-
+	outline: 2px solid var(--text-color);
 	margin-left: 1.2em;
 	margin-right: 0.6em;
 	padding-inline: 0.45em;
@@ -252,7 +267,6 @@ body {
 }
 
 .button:hover {
-	background-color: var(--text-color);
-	color: var(--primary-color);
+	background-color: var(--secondary-color);
 	cursor: pointer;
 }

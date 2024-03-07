@@ -1,5 +1,6 @@
 let storedHistory = JSON.parse(localStorage.getItem('history'));
 const historyArray = storedHistory || [];
+
 const transactionText = document.querySelector('.transaction-text');
 const transactionMoney = document.querySelector('.transaction-money');
 const transactionSubmit = document.querySelector('.transaction-submit');
@@ -26,10 +27,8 @@ function createElement(text, money) {
 	if (text && money) {
 		// create Date of saving
 		const time = new Date();
-		console.log(time);
 		const month = time.getMonth() + 1;
 		const day = time.getDate();
-		console.log(day);
 		const year = time.getFullYear();
 		const historyDate = `${day < 10 ? '0' + day : day}/${
 			month < 10 ? '0' + month : month
@@ -37,27 +36,32 @@ function createElement(text, money) {
 		//create Element
 		const div = document.createElement('div');
 		div.classList.add('history-detail');
+		div.style.backgroundImage =
+			money > 0
+				? `linear-gradient(90deg, rgba(0,128,0,1) 0%, rgb(253, 246, 242) 10%, rgb(253, 246, 242) 100%)`
+				: `linear-gradient(270deg, rgba(255,0,0,1) 0%, rgb(253, 246, 242) 10%, rgb(253, 246, 242) 100%)`;
+
 		const h4 = document.createElement('h4');
 		h4.classList.add('history-detail-title');
 		h4.innerText = text;
+
 		const dateElement = document.createElement('p');
 		dateElement.classList.add('date');
 		dateElement.innerText = historyDate;
+
 		const p = document.createElement('p');
 		p.classList.add('history-detail-money');
 		p.innerText = `${money} €`;
+
 		const button = document.createElement('button');
 		button.classList.add('button');
 		button.innerText = 'X';
 		button.addEventListener('click', () => remove(button));
-		const colorDiv = document.createElement('div');
-		colorDiv.classList.add('history-detail-color');
-		colorDiv.style.backgroundColor = money > 0 ? 'green' : 'red';
+
 		div.appendChild(h4);
 		div.appendChild(dateElement);
 		div.appendChild(p);
 		div.appendChild(button);
-		div.appendChild(colorDiv);
 		historySec.appendChild(div);
 		// creating an array of transactions
 		historyObj = {
@@ -89,27 +93,32 @@ function renderLocalStorage() {
 		storedHistory.forEach((item) => {
 			const div = document.createElement('div');
 			div.classList.add('history-detail');
+			div.style.background =
+				item.money > 0
+					? `linear-gradient(90deg, rgba(0,128,0,1) 0%, rgb(253, 246, 242) 10%, rgb(253, 246, 242) 100%)`
+					: `linear-gradient(270deg, rgba(255,0,0,1) 0%, rgb(253, 246, 242) 10%, rgb(253, 246, 242) 100%)`;
+
 			const h4 = document.createElement('h4');
 			h4.classList.add('history-detail-title');
 			h4.innerText = item.text;
+
 			const dateElement = document.createElement('p');
 			dateElement.classList.add('date');
 			dateElement.innerText = item.date;
+
 			const p = document.createElement('p');
 			p.classList.add('history-detail-money');
 			p.innerText = `${item.money} €`;
-			const colorDiv = document.createElement('div');
+
 			const button = document.createElement('button');
 			button.classList.add('button');
 			button.innerText = 'X';
 			button.setAttribute('data-id', item.id); // custom attribute for buttons
-			colorDiv.classList.add('history-detail-color');
-			colorDiv.style.backgroundColor = item.money > 0 ? 'green' : 'red';
+
 			div.appendChild(h4);
 			div.appendChild(dateElement);
 			div.appendChild(p);
 			div.appendChild(button);
-			div.appendChild(colorDiv);
 			historySec.appendChild(div);
 
 			const buttons = document.querySelectorAll('.button');
