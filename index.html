@@ -1,59 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="style.css" />
-		<script src="script.js" defer></script>
-		<title>Your Expences</title>
-	</head>
-	<body>
-		<div class="container">
-			<header class="header">
-				<h1 class="title">Your Expences</h1>
-			</header>
-			<section class="balance-sec">
-				<div class="balance">
-					<h2>Balance:</h2>
-					<h2 class="balance-money">0.00 €</h2>
-				</div>
-				<div class="income-expence">
-					<div class="income">
-						<h3 class="income-title">income</h3>
-						<p class="income-money">0.00 €</p>
-					</div>
-					<div class="expence">
-						<h3 class="expence-title">expence</h3>
-						<p class="expence-money">0.00 €</p>
-					</div>
-				</div>
-			</section>
-			<h2 class="history-title">history</h2>
-			<section class="history-sec"></section>
-			<section class="transaction-sec">
-				<h2 class="transaction-title">Add new transaction</h2>
-				<form action="" class="add-transaction">
-					<label for="transaction-text">Text</label>
-					<input
-						type="text"
-						name="transaction-text"
-						class="transaction-text"
-						placeholder="Enter text"
-						required
-					/>
-					<label for="transaction-money">Amount</label>
-					<input
-						type="number"
-						name="transaction-money"
-						class="transaction-money"
-						placeholder="(negative - expense, positive - income)"
-						required
-					/>
-					<button class="transaction-submit" type="submit">
-						Add transaction
-					</button>
-				</form>
-			</section>
-		</div>
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" defer></script>
+        <title>Your Expenses</title>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <h1 class="title">Your Expenses</h1>
+            </header>
+            <section class="balance-sec">
+                <div class="balance">
+                    <h2>Balance:</h2>
+                    <h2 class="balance-money">0.00 €</h2>
+                </div>
+                <div class="income-expense">
+                    <div class="income">
+                        <h3 class="income-title">income</h3>
+                        <p class="income-money">0.00 €</p>
+                    </div>
+                    <div class="expense">
+                        <h3 class="expense-title">expense</h3>
+                        <p class="expense-money">0.00 €</p>
+                    </div>
+                </div>
+            </section>
+            <!-- <div class="buttons-sec">
+                <button class="button incomes-category">Incomes</button>
+                <button class="button expenses-category">Expenses</button>
+                <button class="button over-50-category">over 50 Euros</button>
+                <button class="button groceries-category">Groceries</button>
+            </div> -->
+            <h2 class="history-title">history</h2>
+            <section class="history-sec"></section>
+            <section class="transaction-sec">
+                <h2 class="transaction-title">Add new transaction</h2>
+                <form action="" class="add-transaction">
+                    <label for="transaction-text">Text</label>
+                    <input
+                        type="text"
+                        name="transaction-text"
+                        class="transaction-text"
+                        placeholder="Enter text"
+                        required
+                    />
+                    <label for="transaction-money">Amount</label>
+                    <input
+                        type="number"
+                        name="transaction-money"
+                        class="transaction-money"
+                        placeholder="(negative - expense, positive - income)"
+                        required
+                    />
+                    <!-- <label for="Categories">Categories</label>
+                    <select
+                        class="categories"
+                        name="Categories"
+                        id="Categories"
+                    >
+                        <option selected value="no-category">
+                            No Category
+                        </option>
+                        <option value="Groceries">Groceries</option>
+                        <option value="Transportation">Transportation</option>
+                        <option value="clothing">clothing</option>
+                    </select> -->
+
+                    <button class="transaction-submit" type="submit">
+                        Add transaction
+                    </button>
+                </form>
+            </section>
+        </div>
+    </body>
 </html>
